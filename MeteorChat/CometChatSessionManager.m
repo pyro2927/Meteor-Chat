@@ -17,12 +17,20 @@
 
 @implementation CometChatSessionManager
 
+static CometChatSessionManager *sharedClient = nil;
+
++ (instancetype)sharedClient
+{
+    return sharedClient;
+}
+
 - (id)initWithBaseURL:(NSURL *)url
 {
     if (self = [super initWithBaseURL:url])
     {
         self.requestSerializer = [AFHTTPRequestSerializer serializer];
         self.responseSerializer = [AFHTTPResponseSerializer serializer];
+        sharedClient = self;
     }
     return self;
 }
@@ -34,9 +42,15 @@
     
     return [self GET:@"cometchat/extensions/mobileapp/login.php" parameters:@{@"password": password, @"username": username, @"callbackfn": @"mobileapp"} success:^(NSURLSessionDataTask *task, id responseObject) {
         NSString *token = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        [self setLoginWithToken:token];
+        if ([token isEqualToString:@"0"]) {
+            completion(nil, false);
+        } else {
+            [self setLoginWithToken:token];
+            completion(token, false);
+        }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Error logging in: %@", error.localizedDescription);
+        completion(error, false);
     }];
     
 }

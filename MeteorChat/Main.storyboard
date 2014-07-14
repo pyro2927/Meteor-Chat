@@ -4,10 +4,37 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
+        <!--Chat Listing Table View Controller-->
+        <scene sceneID="rhy-lA-lPa">
+            <objects>
+                <tableViewController id="7KH-MY-nxu" customClass="ChatListingTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UpM-5c-DBA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" id="iSC-mY-gv7">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iSC-mY-gv7" id="vKg-Fi-OE4">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7KH-MY-nxu" id="yfW-EH-20Z"/>
+                            <outlet property="delegate" destination="7KH-MY-nxu" id="XCz-1R-Eae"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Ox0-zo-OpK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVm-gN-z0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="677" y="110"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="wrq-75-9SO">
             <objects>
-                <viewController id="JTe-WC-IFy" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JTe-WC-IFy" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CZm-78-jXK"/>
                         <viewControllerLayoutGuide type="bottom" id="cIO-ey-2EP"/>
@@ -24,18 +51,18 @@
                             <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEa-rv-wVB" customClass="JVFloatLabeledTextField">
                                 <rect key="frame" x="20" y="135" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGu-d0-bUX">
                                 <rect key="frame" x="20" y="173" width="280" height="30"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="JTe-WC-IFy" eventType="touchUpInside" id="FJP-Sd-IOS"/>
                                 </connections>
                             </button>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Website URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m42-FT-t5p">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Website URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m42-FT-t5p" customClass="JVFloatLabeledTextField">
                                 <rect key="frame" x="20" y="71" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -46,12 +73,13 @@
                     <navigationItem key="navigationItem" id="IZA-Ai-Xpa"/>
                     <connections>
                         <outlet property="passwordField" destination="eEa-rv-wVB" id="4KR-OV-dh6"/>
+                        <outlet property="urlField" destination="m42-FT-t5p" id="d2U-ux-5lz"/>
                         <outlet property="usernameField" destination="eIk-na-b4O" id="xou-ub-bcF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyv-rR-Dy7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="428"/>
+            <point key="canvasLocation" x="677" y="742"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SE4-an-9Wo">
@@ -62,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="JTe-WC-IFy" kind="relationship" relationship="rootViewController" id="ns9-tJ-UJu"/>
+                        <segue destination="7KH-MY-nxu" kind="relationship" relationship="rootViewController" id="tzT-nB-JIO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6K-q2-NLv" userLabel="First Responder" sceneMemberID="firstResponder"/>

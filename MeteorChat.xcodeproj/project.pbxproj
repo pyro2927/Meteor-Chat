@@ -15,6 +15,9 @@
 		D867AE79197455A200A0A76C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D867AE78197455A200A0A76C /* Main.storyboard */; };
 		D867AE7D197456F400A0A76C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D867AE7C197456F400A0A76C /* LoginViewController.m */; };
 		D867AE8119745AFE00A0A76C /* CometChatSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D867AE8019745AFE00A0A76C /* CometChatSessionManager.m */; };
+		D87AED9D19746DD8004E6987 /* ChatListingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87AED9C19746DD8004E6987 /* ChatListingTableViewController.m */; };
+		D87AEDA019747678004E6987 /* CometChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87AED9F19747678004E6987 /* CometChatViewController.m */; };
+		D87AEDA41974772E004E6987 /* CometChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D87AEDA31974772E004E6987 /* CometChatMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,12 @@
 		D867AE7C197456F400A0A76C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D867AE7F19745AFE00A0A76C /* CometChatSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CometChatSessionManager.h; sourceTree = "<group>"; };
 		D867AE8019745AFE00A0A76C /* CometChatSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CometChatSessionManager.m; sourceTree = "<group>"; };
+		D87AED9B19746DD8004E6987 /* ChatListingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatListingTableViewController.h; sourceTree = "<group>"; };
+		D87AED9C19746DD8004E6987 /* ChatListingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatListingTableViewController.m; sourceTree = "<group>"; };
+		D87AED9E19747678004E6987 /* CometChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CometChatViewController.h; sourceTree = "<group>"; };
+		D87AED9F19747678004E6987 /* CometChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CometChatViewController.m; sourceTree = "<group>"; };
+		D87AEDA21974772E004E6987 /* CometChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CometChatMessage.h; sourceTree = "<group>"; };
+		D87AEDA31974772E004E6987 /* CometChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CometChatMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +107,7 @@
 			children = (
 				D867AE5F1974539200A0A76C /* AppDelegate.h */,
 				D867AE601974539200A0A76C /* AppDelegate.m */,
+				D87AEDA119747705004E6987 /* Objects */,
 				D867AE7E19745A3600A0A76C /* API Client */,
 				D867AE621974539200A0A76C /* Images.xcassets */,
 				D867AE5B1974539200A0A76C /* Supporting Files */,
@@ -138,6 +148,10 @@
 			children = (
 				D867AE7B197456F400A0A76C /* LoginViewController.h */,
 				D867AE7C197456F400A0A76C /* LoginViewController.m */,
+				D87AED9B19746DD8004E6987 /* ChatListingTableViewController.h */,
+				D87AED9C19746DD8004E6987 /* ChatListingTableViewController.m */,
+				D87AED9E19747678004E6987 /* CometChatViewController.h */,
+				D87AED9F19747678004E6987 /* CometChatViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -149,6 +163,15 @@
 				D867AE8019745AFE00A0A76C /* CometChatSessionManager.m */,
 			);
 			name = "API Client";
+			sourceTree = "<group>";
+		};
+		D87AEDA119747705004E6987 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				D87AEDA21974772E004E6987 /* CometChatMessage.h */,
+				D87AEDA31974772E004E6987 /* CometChatMessage.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,8 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D867AE611974539200A0A76C /* AppDelegate.m in Sources */,
+				D87AEDA019747678004E6987 /* CometChatViewController.m in Sources */,
 				D867AE5E1974539200A0A76C /* main.m in Sources */,
 				D867AE7D197456F400A0A76C /* LoginViewController.m in Sources */,
+				D87AEDA41974772E004E6987 /* CometChatMessage.m in Sources */,
+				D87AED9D19746DD8004E6987 /* ChatListingTableViewController.m in Sources */,
 				D867AE8119745AFE00A0A76C /* CometChatSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

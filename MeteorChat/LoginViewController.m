@@ -27,7 +27,9 @@
 - (IBAction)login:(id)sender{
     CometChatSessionManager *manager = [[CometChatSessionManager alloc] initWithBaseURL:[NSURL URLWithString:urlField.text]];
     [manager signInWithUsername:usernameField.text password:passwordField.text completion:^(id object, NSError *error) {
-        
+        if (!error) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"authenticated" object:nil];
+        }
     }];
 }
 

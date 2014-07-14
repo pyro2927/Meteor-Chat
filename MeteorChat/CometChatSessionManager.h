@@ -12,6 +12,10 @@ typedef void (^CometChatCompletionBlock)(id object, NSError *error);
 
 @interface CometChatSessionManager : AFHTTPSessionManager
 
++ (instancetype)sharedClient;
+
 - (NSURLSessionDataTask *)signInWithUsername:(NSString *)username password:(NSString *)password completion:(CometChatCompletionBlock)completion;
+- (void)setLoginWithToken:(NSString*)token;
+- (NSURLSessionDataTask *)receiveWithTimestamp:(NSString*)timestamp completion:(CometChatCompletionBlock)completion;
 
 @end
